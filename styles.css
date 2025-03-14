@@ -424,13 +424,29 @@ header {
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .ipo-stats {
         flex-direction: column;
+        gap: 20px;
     }
     
     .stat-item {
         width: 100%;
+        padding: 20px;
+    }
+    
+    .chart {
+        gap: 20px;
     }
 }
 
@@ -439,6 +455,9 @@ header {
         position: fixed;
         left: -250px;
         height: 100vh;
+        width: 85%;
+        max-width: 300px;
+        z-index: 1000;
     }
     
     .sidebar.active {
@@ -447,41 +466,274 @@ header {
     
     .hamburger {
         display: block;
+        top: 15px;
+        left: 15px;
     }
     
     .main-content {
         width: 100%;
         margin-left: 0;
+        padding: 15px;
     }
     
     .sidebar.active + .main-content {
-        margin-left: 250px;
-    }
-    
-    .chart {
-        flex-direction: column;
-    }
-    
-    .chart-item {
-        width: 100%;
-    }
-    
-    .quick-links ul {
-        flex-direction: column;
+        margin-left: 0;
     }
     
     header {
         flex-direction: column;
         align-items: flex-start;
-    }
-    
-    .search {
-        margin-top: 15px;
-        width: 100%;
+        padding: 15px 0;
     }
     
     .greeting {
-        margin-bottom: 10px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .search {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .dashboard h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-item h3 {
+        font-size: 24px;
+    }
+    
+    .stat-item p {
+        font-size: 14px;
+    }
+    
+    .quick-links {
+        padding: 15px;
+    }
+    
+    .quick-links h3 {
+        font-size: 16px;
+    }
+    
+    .quick-links a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .main-board {
+        padding: 15px;
+    }
+    
+    .main-board h3 {
+        font-size: 16px;
+    }
+    
+    .chart-item {
+        padding: 12px;
+    }
+    
+    .chart-item h4 {
+        font-size: 20px;
+    }
+    
+    .chart-item p {
+        font-size: 14px;
+    }
+    
+    .view-report {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .main-content {
+        padding: 10px;
+    }
+    
+    .logo {
+        font-size: 24px;
+        padding: 8px;
+    }
+    
+    .menu li {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .hamburger {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+    }
+    
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+    }
+    
+    .greeting {
+        font-size: 1.2rem;
+    }
+    
+    .search {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .dashboard h2 {
+        font-size: 18px;
+    }
+    
+    .stat-item {
+        padding: 12px;
+    }
+    
+    .stat-item h3 {
+        font-size: 20px;
+    }
+    
+    .stat-item p {
+        font-size: 12px;
+    }
+    
+    .quick-links {
+        padding: 12px;
+    }
+    
+    .quick-links h3 {
+        font-size: 15px;
+    }
+    
+    .quick-links a {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    
+    .main-board {
+        padding: 12px;
+    }
+    
+    .main-board h3 {
+        font-size: 15px;
+    }
+    
+    .chart-item {
+        padding: 10px;
+    }
+    
+    .chart-item h4 {
+        font-size: 18px;
+    }
+    
+    .chart-item p {
+        font-size: 12px;
+    }
+    
+    .view-report {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .menu li:hover {
+        transform: none;
+    }
+    
+    .stat-item:hover {
+        transform: none;
+    }
+    
+    .chart-item:hover {
+        transform: none;
+    }
+    
+    .quick-links a:hover {
+        transform: none;
+    }
+    
+    .view-report:hover {
+        transform: none;
+    }
+}
+
+/* Landscape Mode Optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sidebar {
+        overflow-y: auto;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .menu li {
+        margin: 8px 0;
+    }
+    
+    .stat-item {
+        padding: 10px;
+    }
+    
+    .chart-item {
+        padding: 8px;
+    }
+}
+
+/* High-DPI Screen Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        font-weight: 600;
+    }
+    
+    .menu li {
+        font-weight: 500;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+    }
+    
+    .main-content {
+        background-color: #242424;
+    }
+    
+    .quick-links, .main-board {
+        background-color: #2d2d2d;
+    }
+    
+    .greeting, .dashboard h2, .quick-links h3, .main-board h3 {
+        color: #ffffff;
+    }
+    
+    .search {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    
+    .search::placeholder {
+        color: #999999;
+    }
+    
+    .chart-item {
+        background-color: #333333;
     }
 }
 
